@@ -1,4 +1,4 @@
-export function avaliarFimes(ListaDeFimes) {
+export function avaliarFimes(listaDeFimes) {
   let resultado = [];
 
   listaDeFimes.forEach((filme) => {
@@ -16,14 +16,14 @@ export function avaliarFimes(ListaDeFimes) {
       avaliacaoFinal = "Filme recomendado";
     } else if (media >= 3 && media < 4) {
       avaliacaoFinal = "Filme razoável";
-    } else {
+    } else if (media < 3) {
       avaliacaoFinal = "Filme ruim";
     }
 
     resultado.push({
       nome: filme.nome,
       totalVotos: quantidadeDeVotos,
-      media: media.toFixed(1),
+      media: Number(media.toFixed(1)),
       classificacao: avaliacaoFinal,
     });
   });
